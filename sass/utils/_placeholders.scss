@@ -1,0 +1,80 @@
+@use 'variables' as *;
+@use 'media-mixins' as *;
+
+%link {
+  text-decoration: none;
+}
+
+%list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+%img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+%container {
+  margin: 0 auto;
+  padding: 0 15px;
+
+  @include sm-min {
+    width: $sm;
+  }
+  @include md-min {
+    width: $md;
+  }
+  @include lg-min {
+    width: $lg;
+  }
+}
+
+%btn {
+  cursor: pointer;
+  font-size: 16px;
+  font-family: inherit;
+  border-radius: 4px;
+  border-color: transparent;
+}
+
+%section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @include lg-min {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}
+
+%section-title {
+  font-size: 28px;
+  line-height: 1.18;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  margin-top: 0;
+  margin-bottom: 50px;
+
+  @include lg-min {
+    font-size: 36px;
+    line-height: 1.16;
+  }
+}
+
+%visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

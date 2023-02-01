@@ -1,0 +1,40 @@
+@use '../utils/variables' as *;
+@use '../utils/placeholders' as *;
+@use '../utils/media-mixins' as *;
+
+.page-header {
+  border-bottom: 1px solid $color-line-first;
+  @include md-max {
+    position: relative;
+  }
+}
+
+.page-header__container {
+  @extend %container;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include md-min {
+    display: grid;
+    grid-template-columns: 134px 1fr;
+    column-gap: 87px;
+    justify-content: start;
+  }
+  @include lg-min {
+    grid-template-columns: 145px 1fr;
+    column-gap: 93px;
+  }
+}
+
+.page-header__navbar {
+  display: flex;
+  align-items: center;
+}
+
+.page-header__menu {
+  display: none;
+  @include md-min {
+    display: flex;
+    align-items: center;
+  }
+}

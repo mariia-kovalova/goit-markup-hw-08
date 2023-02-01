@@ -1,0 +1,49 @@
+@use '../utils/variables' as *;
+@use '../utils/placeholders' as *;
+@use '../utils/media-mixins' as *;
+
+.auth-nav {
+  @extend %list;
+  display: flex;
+  gap: 50px;
+  margin-left: auto;
+  @include lg-md {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.auth-nav__link {
+  @extend %link;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  @include lg-min {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  color: $color-secondary;
+  box-shadow: none;
+  transition: color 250ms $cubic;
+
+  &:hover,
+  &:focus {
+    color: $color-accent;
+  }
+}
+
+.auth-nav__icon {
+  fill: $color-secondary;
+  transition: fill 250ms $cubic;
+
+  .auth-nav__link:hover &,
+  .auth-nav__link:focus & {
+    fill: $color-accent;
+  }
+}
